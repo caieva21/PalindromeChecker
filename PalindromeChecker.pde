@@ -16,7 +16,30 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  String pal = new String();
+  String palin = new String();
+  String palinCheck = new String();
+
+  for (int i = 0; i <word.length(); i++)
+  {
+    pal = pal + word.substring(i,i+1).toLowerCase(); 
+  } 
+  for (int j = 0; j < pal.length(); j++)
+  {
+    if (Character.isLetter(pal.charAt(j)))
+    {
+      palin = palin + pal.charAt(j);
+    }
+  }
+  for (int i = palin.length()-1; i >= 0; i--)
+      {
+        palinCheck = palinCheck + palin.charAt(i);
+      }
+  if (palinCheck.equals(palin))  
+    {
+    return true;
+    }
   return false;
 }
+
 
